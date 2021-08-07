@@ -10,3 +10,4 @@ message("flags are : ${LAPACK_LINKER_FLAGS}")
 
 add_executable(lapack lapack.cpp )
 target_include_directories(lapack SYSTEM PRIVATE ${PROJECT_SOURCE_DIR})
+target_link_libraries(lapack ${LAPACK_LIBRARIES})
