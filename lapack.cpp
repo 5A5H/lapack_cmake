@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-extern void dgesv(int* dim1, int* dim2, double* a, int* lda, int* ipiv, double* b, int* ldb, int* info);
+extern "C" void DGESV(int *n, int *nrhs, double *a, int *lda, int *ipiv, double *b, int *ldb, int *info);
 
 int main()
 {
@@ -26,7 +26,8 @@ int main()
     b.push_back(0);
 
 
-    dgesv(&dim, &nrhs,& a[0], &lda, ipiv, & b[0], &ldb, &info);
+    DGESV(&dim, &nrhs,& a[0], &lda, ipiv, & b[0], &ldb, &info);
+
 
     return 0;
 }
