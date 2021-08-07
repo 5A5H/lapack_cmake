@@ -25,8 +25,11 @@ int main()
     b.push_back(2);
     b.push_back(0);
 
+    std::cout << "b= [" << b[0] << ", " << b[1] << " ]" << std::endl;
 
     dgesv_(&dim, &nrhs,& a[0], &lda, ipiv, & b[0], &ldb, &info);
+    
+    std::cout << "x= [" << b[0] << ", " << b[1] << " ]" << std::endl;
 
 
     return 0;
